@@ -18,6 +18,12 @@ function refreshLink(tab){
         req.url = tab.url;
         document.getElementById("url").value = req.url;
     }
+    req.selectedTabUrl = tab.url;
+}
+
+function getCurrentURL(){
+    var req = chrome.extension.getBackgroundPage().Request.request;
+    document.getElementById("url").value = req.selectedTabUrl;
 }
 
 function onHeaderChanged()

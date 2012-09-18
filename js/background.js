@@ -3,6 +3,7 @@ function Request() {
     this.body = null;
     this.method = "GET";
     this.url = "";
+    this.selectedTabUrl = "";   // current selected tab's url
 
     this.xhr = null;
     this.nameE = null;		// element
