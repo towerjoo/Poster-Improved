@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <script type="text/javascript" src="js/popup.js"></script>
+  </head>
+  <body>
+    <div id="urlbox">
+      URL: <input type="text" size="70" id="url" value="http://" onkeyup="onUrlChanged();" onblur="onUrlChanged();"/>
+    </div>
+    <br />
+    <div id="header">
+      Headers: <br />
+      Name: <input type="text" size="15" id="header_name" value="" onkeyup="onHeaderChanged();" onblur="onHeaderChanged();"/>
+      Value: <input type="text" size="15" id="header_value" value="" onkeyup="onHeaderChanged();" onblur="onHeaderChanged();"/>
+      <input type="button" value="Add/Change" onclick="onAddChangeHeader();"/>
+      <br />
+      value '##' to delete
+      <br />
+      <br />
+      <div id="header_list">
+      </div>
+    </div>
+    <br />
+    <div id="body">
+      Content Body:
+      <textarea id="content_body" rows="3" cols="60" onkeyup="onBodyChanged();" onblur="onBodyChanged();"></textarea>
+    </div>
+    <br />
+    <div id="actions">
+      <input type="button" value="GET" onclick="doRequest('GET');"/>
+      <input type="button" value="POST" onclick="doRequest('POST');"/>
+      <input type="button" value="HEAD" onclick="doRequest('HEAD');"/>
+      <input type="button" value="PUT" onclick="doRequest('PUT');"/>
+      <input type="button" value="DELETE" onclick="doRequest('DELETE');"/>
+      <input type="button" value="OPTIONS" onclick="doRequest('OPTIONS');"/>
+    </div>
+    <br />
+    Response:
+    <div id="response_header">
+    </div>
+    <br />
+    <div id="response_body">
+    </div>
+    <script>
+      init();
+    </script>
+
+  </body>
+</html>
+
