@@ -113,6 +113,11 @@ function doRequest(method)
 
 	document.getElementById("response_header").innerHTML = result;
 	document.getElementById("response_body").innerText = xhr.responseText;
+    req.result = xhr.responseText;
     }
     xhr.send(req.body);
+}
+
+function openInNewTab(){
+    chrome.tabs.create({url : "result.html"});
 }

@@ -10,6 +10,7 @@ function Request() {
     this.valueE = null;
     this.hname = "";		// header name
     this.hvalue = "";		// header value
+    this.result = "";
 }
 
 Request.request = new Request();
