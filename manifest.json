@@ -1,11 +1,11 @@
 {
-  "name": "Chrome Poster",
+  "name": "PI(Poster Improved)",
   "version": "1.4",
-  "description": "Chrome poster is a developer tool that allows you to interact with http server",
+  "description": "Poster Improved is a developer tool that allows you to interact with http server",
   "background_page": "background.html",
   "browser_action": {
-    "default_icon": "poster.png",
-    "default_title": "Chrome Poster",
+    "default_icon": "pi.png",
+    "default_title": "Poster Improved",
     "popup": "popup.html"
   },
   "permissions": [

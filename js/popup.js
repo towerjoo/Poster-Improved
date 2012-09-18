@@ -11,6 +11,15 @@ function init()
     list.innerHTML = renderHeaders()
 }
 
+function refreshLink(tab){
+    var req = chrome.extension.getBackgroundPage().Request.request;
+    var current_url = req.url;
+    if (current_url == ""){
+        req.url = tab.url;
+        document.getElementById("url").value = req.url;
+    }
+}
+
 function onHeaderChanged()
 {
     var req = chrome.extension.getBackgroundPage().Request.request;

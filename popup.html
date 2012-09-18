@@ -3,6 +3,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <script type="text/javascript" src="js/popup.js"></script>
+    <script>
+     window.addEventListener("load", windowLoaded, false);
+    function windowLoaded() {
+      chrome.tabs.getSelected(null, function(tab) {
+            refreshLink(tab);
+      });
+    }
+    </script>
   </head>
   <body>
     <div id="urlbox">
