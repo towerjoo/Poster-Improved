@@ -1,8 +1,15 @@
 {
   "name": "PI(Poster Improved)",
-  "version": "1.4",
+  "version": "1.0",
   "description": "Poster Improved is a developer tool that allows you to interact with http server",
-  "background_page": "background.html",
+"icons": { 
+    "16": "pi16.png",
+       "48": "pi48.png",
+      "128": "pi128.png" 
+},
+  "background": {
+        "page" : "background.html"
+    },
   "browser_action": {
     "default_icon": "pi.png",
     "default_title": "Poster Improved",
