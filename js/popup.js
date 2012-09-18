@@ -43,12 +43,21 @@ function renderHeaders()
 {
     var req = chrome.extension.getBackgroundPage().Request.request;
     var html = "<table border=1>";
-    html += "<tr><th>name</th><th>value</th></tr>";
+    html += "<tr><th>name</th><th>value</th><th></th></tr>";
     for (var i in req.headers) {
-	html += "<tr><td align=\"left\">" + i + "</td><td align=\"right\">" + req.headers[i] + "</td></tr>";
+	html += "<tr><td align=\"left\">" + i + "</td><td align=\"right\">" + req.headers[i] + "</td><td>" + "<a href='javascript:void(0)' onclick='deleteItem(" + "\"" + i + "\"" + ")'>X</a></td></tr>";
     }
     html += "</table>"
     return html;
+}
+
+function deleteItem(item){
+    var name = item;
+    var req = chrome.extension.getBackgroundPage().Request.request;
+	delete req.headers[name];
+    onHeaderChanged();
+    var list = document.getElementById("header_list");
+    list.innerHTML = renderHeaders()
 }
 
 function onAddChangeHeader()
@@ -59,11 +68,7 @@ function onAddChangeHeader()
         return;
     }
     var value = req.valueE.value;
-    if (value == "##") {
-	delete req.headers[name];
-    } else {
 	req.headers[name] = value;
-    }
     req.nameE.value = req.valueE.value = "";
     onHeaderChanged();
     var list = document.getElementById("header_list");
